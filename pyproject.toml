@@ -1,0 +1,57 @@
+[tool.poetry]
+name = "autonomous-cars"
+version = "0.1.0"
+description = "Computer Vision and AI for Autonomous Cars case studies from ETH Zürich MSc coursework (2023): KITTI 2D/3D visualisation and two-stage 3D object detection geometry."
+authors = ["Petros Polydorou"]
+readme = "README.md"
+license = "MIT"
+packages = [{ include = "autonomous_cars", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+
+# Core
+numpy = "^1.26"
+pillow = "^10.3"
+shapely = "^2.0"
+
+# Optional 3D visualisation backend
+vispy = { version = "^0.14", optional = true }
+pyqt5 = { version = "^5.15", optional = true }
+
+[tool.poetry.extras]
+vis = ["vispy", "pyqt5"]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2"
+ruff = "^0.5"
+ipykernel = "^6.29"
+jupyter = "^1.0"
+pre-commit = "^3.8"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+# ---------------------------------------------------------------------------
+# Tool configuration
+# ---------------------------------------------------------------------------
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "NPY"]
+ignore = [
+    "E501",  # line too long (handled by formatter)
+    "E741",  # ambiguous variable names (l, h, w are standard in 3D box code)
+]
+
+[tool.ruff.lint.per-file-ignores]
+"src/autonomous_cars/detection_3d/*" = ["NPY002"]  # legacy np.random is part of the public API
+"src/autonomous_cars/visualization/visualize_3d.py" = ["F821"]  # see class docstring
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -q"

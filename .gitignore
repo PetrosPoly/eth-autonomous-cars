@@ -1,0 +1,82 @@
+# Byte-compiled / cached
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtualenvs
+.venv/
+venv/
+env/
+ENV/
+
+# Poetry
+# Keep poetry.lock in VCS; drop only local caches
+.poetry-cache/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_backup
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Testing / coverage
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment
+.env
+.env.*
+
+# Results / model checkpoints / logs
+results/
+runs/
+logs/
+wandb/
+mlruns/
+*.ckpt
+*.pt.tmp
+
+# -----------------------------------------------------------------------------
+# Dataset files — excluded by default to keep the repo lean.
+# See data/README.md for how to obtain and place them.
+# -----------------------------------------------------------------------------
+data/**/*.npz
+data/**/*.npy
+data/**/*.bytes
+data/**/*.byte
+data/**/*.csv
+data/**/*.pt
+data/**/*.jpeg
+data/**/*.jpg
+data/**/*.png
+
+# Keep placeholder READMEs
+!data/README.md
+!data/**/README.md
+!data/**/.gitkeep
+
+# -----------------------------------------------------------------------------
+# Archived raw coursework materials (legacy handouts/experiments).
+# These are intentionally not versioned in the polished public repository.
+# -----------------------------------------------------------------------------
+/archive/legacy_raw/
