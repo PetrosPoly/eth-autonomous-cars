@@ -1,4 +1,4 @@
-# `autonomous-cars` — ETH Zürich Computer Vision & AI for Autonomous Cars (2023)
+# ETH Zürich Computer Vision & AI for Autonomous Cars (2023)
 
 Production-style implementations of selected coursework from the *Computer
 Vision and Artificial Intelligence for Autonomous Cars* course at ETH Zürich,
